@@ -15,7 +15,7 @@ pipeline{
       steps{
         dir("${WORKSPACE}/source"){
           git branch: params.branch,
-          url: "https://github.com/Diego-pgm/testsonar.git
+          url: "https://github.com/Diego-pgm/testsonar.git"
         }
       }
     }
