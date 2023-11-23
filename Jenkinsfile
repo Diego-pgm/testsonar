@@ -1,4 +1,5 @@
 pipeline{
+  agent any
   parameters{
     string(name: 'branch', defaultValue: 'master')
     choice(name: 'repo', choices: ['testsonar'])
