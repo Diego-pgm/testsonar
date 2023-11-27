@@ -24,7 +24,7 @@ pipeline{
       steps{
         withCredentials([string(credentialsId: 'sonarcred', variable: 'sonartoken')]) {
 	  script {
-             export "PATH=/sonar-scanner/bin:$PATH"
+             "PATH=/sonar-scanner/bin:$PATH"
           }    
         }
       }
