@@ -23,10 +23,8 @@ pipeline{
     stage('SonarScanner'){
       steps{
         withCredentials([string(credentialsId: 'sonarcred', variable: 'sonartoken')]) {
-	  script {
-             "PATH=/sonar-scanner/bin:$PATH"
-	     sonar-scanner '-Dsonar.projectKey=testsonar -Dsonar.sources -Dsonar.host.url=http://192.168.0.102:9000 -Dsonar.token="$sonartoken"'
-          }    
+             sh 'export "PATH=/sonar-scanner/bin:$PATH"'
+	     sh 'sonar-scanner -Dsonar.projectKey=testsonar -Dsonar.sources -Dsonar.host.url=http://192.168.0.102:9000 -Dsonar.token="$sonartoken"'
         }
       }
     }
